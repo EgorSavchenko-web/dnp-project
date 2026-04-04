@@ -1,0 +1,11 @@
+Report (PDF)
+Architecture Diagram
+stress_test.py, look_up.py and other performance results
+
+README
+
+Video
+
+
+Кроме того, вариант 5A по тексту требует «all in‑memory» – у нас есть улучшение в виде сохранения на диск.
+Возмонжо, стоит сделать флаг --in-memory или убрать _save???

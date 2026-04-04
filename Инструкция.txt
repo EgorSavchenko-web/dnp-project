@@ -1,1 +1,4 @@
+python phonebook_server.py
 python phonebook_client.py http://localhost:8000
+python stress_test.py
+python look_up.py
