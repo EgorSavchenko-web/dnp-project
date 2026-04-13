@@ -1,22 +1,33 @@
-import json
-import os
-import threading
-import xmlrpc.server
-import socketserver
+import sys
+from xmlrpc.server import SimpleXMLRPCServer
+from socketserver import ThreadingMixIn
 from phonebook_logic import Phonebook
 
 
-class ThreadedXMLRPCServer(socketserver.ThreadingMixIn, xmlrpc.server.SimpleXMLRPCServer):
+class ThreadedXMLRPCServer(ThreadingMixIn, SimpleXMLRPCServer):
     pass
 
 
 def main():
-    server = ThreadedXMLRPCServer(('0.0.0.0', 8000), allow_none=True)
-    server.register_instance(Phonebook())
-    server.register_introspection_functions()
-    print("Phonebook RPC server running on port 8000 (persistent storage enabled)")
-    server.serve_forever()
+    if len(sys.argv) > 1:
+        try:
+            host, port = sys.argv[1].split(":")
+            port = int(port)
+        except ValueError:
+            print("Usage: python phonebook_server.py <host:port>")
+            sys.exit(1)
+
+    phonebook = Phonebook()
+    server = ThreadedXMLRPCServer((host, port), allow_none=True)
+    server.register_instance(phonebook)
+
+    print(f"XML-RPC Phonebook server running on http://{host}:{port}")
+    print("Press Ctrl+C to stop.")
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print("\nServer stopped.")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
