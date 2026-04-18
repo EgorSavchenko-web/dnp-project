@@ -1,18 +1,46 @@
 # Phonebook Lookups with RPC
 
-A write-once phonebook service that supports querying and returns data signed by the server for verification.  
-Built as a remote phonebook using RPC, where clients can query and manage contact information.  
-The backend can be memory-based or use a database for persistence.
+A modifiable phonebook service where users can add, edit, delete, and look up contacts.  
+Built as a remote phonebook using XML-RPC, where multiple clients can query and manage contact information concurrently.  
+The backend is memory-based with optional JSON snapshots for durability.
 
 ## Features
 
+- Add, edit, delete, and lookup contacts
 - Name-to-number resolution
-- Find the number of a person based on a name
-- Server-signed responses for verification
-- Concurrent client request handling
+- Concurrent client request handling (threaded server + RLock)
+- Crash-safe persistence with atomic JSON writes
+- In-memory storage for fast read access
+## How To Run
+### Start server
+```bash
+python phonebook_server.py
+````
+### Start client
+```bash
+python phonebook_client.py http://localhost:8000
+```
+### Commands
+```bash
+add NAME NUMBER
+edit NAME NUMBER
+delete NAME
+lookup NAME
+list
+exit
+```
 
+### Run stress test
+```bash
+python stress_test.py
+```
+
+### Run latency benchmark
+```bash
+python look_up.py
+```
 ## Demonstration
-![ADD demo video](./demo.gif)
+[Watch demo](./demo.mp4)
 
 ## Connection to the repository
 
@@ -32,24 +60,11 @@ git branch -M main
 git push -uf origin main
 ```
 ***
-
-## Git Workflow Process description
-
-We decided to separate the development into ???? branches: **main**, ??????? странно писать ветки с именами
-
-**main** is a branch to which other branches are merged. Apart from merge commits it includes the commits of **README.md** file
-
-
-Each branch merge is accompanied by a Pull Request. If both branches are compatible each other and every team member
-came to consensus, then branches are merged completely. Each Pull Request ideally is solved within 1 day
-
-
+## Git Workflow
+Used a **main** branch and separate branches for each team member (`aksiniia`, `andrey`, `egor`, `ekaterina`, `matvey`). Everyone worked in their own branch. Changes were merged into `main` via pull requests after code review. All branches were regularly synced with `main` to avoid conflicts.
 ## Authors and acknowledgment
 **Ekaterina Kuznetsova** (...)<br>
 **Aksiniia Miasoedova** (README and report writer)<br>
 **Andrei Ilin** (...)<br>
 **Egor Savchenko** (...)<br>
 **Matvey Shulaev** (...)<br>
-
-## Project status
-On active process...
