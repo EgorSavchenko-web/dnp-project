@@ -14,7 +14,7 @@ The backend is memory-based with optional JSON snapshots for durability.
 ## How To Run
 ### Start server
 ```bash
-python phonebook_server.py
+python phonebook_server.py 0.0.0.0:8000
 ````
 ### Start client
 ```bash
