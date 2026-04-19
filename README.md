@@ -63,8 +63,8 @@ git push -uf origin main
 ## Git Workflow
 Used a **main** branch and separate branches for each team member (`aksiniia`, `andrey`, `egor`, `ekaterina`, `matvey`). Everyone worked in their own branch. Changes were merged into `main` via pull requests after code review. All branches were regularly synced with `main` to avoid conflicts.
 ## Authors and acknowledgment
-**Ekaterina Kuznetsova** (...)<br>
+**Ekaterina Kuznetsova** (Server correction, split of server and logic codes, help with report creation)<br>
 **Aksiniia Miasoedova** (README and report writer)<br>
-**Andrei Ilin** (...)<br>
-**Egor Savchenko** (...)<br>
-**Matvey Shulaev** (...)<br>
+**Andrei Ilin** (Optimization, corrections for non-localhost launching)<br>
+**Egor Savchenko** (Initial draft code of the whole system, stress testing, memory storing system, safety and optimization)<br>
+**Matvey Shulaev** (Server code improvement, demo-video creation)<br>
