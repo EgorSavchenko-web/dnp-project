@@ -1,4 +1,4 @@
-python phonebook_server.py
-python phonebook_client.py http://localhost:8000
+python phonebook_server.py 0.0.0.0:8000
+python phonebook_client.py http://localhost:8000 (or http://server_ip:8000)
 python stress_test.py
 python look_up.py
