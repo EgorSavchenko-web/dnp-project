@@ -21,7 +21,6 @@ def measure(name, func, repeats=N):
     print(f"avg: {statistics.mean(times):.2f} ms")
     print(f"max: {max(times):.2f} ms")
 
-# подготовка данных
 try:
     proxy.add("bench_user", "123456")
 except:
@@ -32,7 +31,6 @@ measure("list latency", lambda: proxy.list_all())
 measure("edit latency", lambda: proxy.edit("bench_user", "999999"))
 measure("delete latency", lambda: proxy.delete("bench_user"))
 
-# снова создадим, чтобы повторно тестить add
 try:
     proxy.delete("bench_add")
 except:
