@@ -14,7 +14,7 @@ The backend is memory-based with optional JSON snapshots for durability.
 ## How To Run
 ### Start server
 ```bash
-python phonebook_server.py
+python phonebook_server.py 0.0.0.0:8000
 ````
 ### Start client
 ```bash
@@ -40,7 +40,7 @@ python stress_test.py
 python look_up.py
 ```
 ## Demonstration
-[Watch demo](./demo.mp4)
+[Watch demo](https://drive.google.com/drive/folders/11h5RRfwwBeRoa-GNRlyxIhFVOzCV9dFM)
 
 ## Connection to the repository
 
@@ -63,8 +63,8 @@ git push -uf origin main
 ## Git Workflow
 Used a **main** branch and separate branches for each team member (`aksiniia`, `andrey`, `egor`, `ekaterina`, `matvey`). Everyone worked in their own branch. Changes were merged into `main` via pull requests after code review. All branches were regularly synced with `main` to avoid conflicts.
 ## Authors and acknowledgment
-**Ekaterina Kuznetsova** (...)<br>
+**Andrei Ilin** (Optimization, corrections for non-localhost launching)<br>
 **Aksiniia Miasoedova** (README and report writer)<br>
-**Andrei Ilin** (...)<br>
-**Egor Savchenko** (...)<br>
-**Matvey Shulaev** (...)<br>
+**Ekaterina Kuznetsova** (Server correction, split of server and logic codes, help with report creation)<br>
+**Egor Savchenko** (Initial draft code of the whole system, stress testing, memory storing system, safety and optimization)<br>
+**Matvey Shulaev** (Server code improvement, demo-video creation)<br>
