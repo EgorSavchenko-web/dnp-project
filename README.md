@@ -2,7 +2,7 @@
 
 A modifiable phonebook service where users can add, edit, delete, and look up contacts.  
 Built as a remote phonebook using XML-RPC, where multiple clients can query and manage contact information concurrently.  
-The backend is memory-based with optional JSON snapshots for durability.
+The backend is memory-based with periodical JSON snapshots for durability.
 
 ## Features
 
